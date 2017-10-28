@@ -11,6 +11,16 @@
     "e2e": "protractor"
   },
   "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "npm run build & concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
+    "serve": "ng serve --proxy-config proxy.conf.json",
+    "build": "ng build --output-path=public",
+    "serve-api": "node server.js",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "dependencies": {
     "@angular/common": "^2.3.1",
     "@angular/compiler": "^2.3.1",
@@ -20,7 +30,9 @@
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
+    "body-parser": "^1.18.2",
     "core-js": "^2.4.1",
+    "express": "^4.16.2",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"
