@@ -4,24 +4,6 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 
-// Configure the Facebook strategy for use by Passport.
-passport.use(new Strategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'http://localhost:3000/login/facebook/return'
-  },
-  function(accessToken, refreshToken, profile, cb) {
-
-    return cb(null, profile);
-  }));
-
-passport.serializeUser(function(user, cb) {
-  cb(null, user);
-});
-
-passport.deserializeUser(function(obj, cb) {
-  cb(null, obj);
-});
 
 // Get our API routes
 const api = require('./server/routes/api');
