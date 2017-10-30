@@ -5,9 +5,9 @@ import { HttpModule, Http } from '@angular/http';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { UserService } from './user.service';
 import { AppComponent } from './app.component';
-import { CollapseModule } from 'ngx-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AlertModule } from 'ngx-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 export function getAuthHttp(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -25,11 +25,10 @@ export function getAuthHttp(http: Http) {
     NavbarComponent
   ],
   imports: [
+    NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
-    HttpModule,
-    CollapseModule,
-    AlertModule.forRoot()
+    HttpModule
   ],
   providers: [
     UserService,
