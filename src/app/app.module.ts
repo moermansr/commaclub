@@ -7,6 +7,7 @@ import { UserService } from './user.service';
 import { AppComponent } from './app.component';
 import { CollapseModule } from 'ngx-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AlertModule } from 'ngx-bootstrap';
 
 export function getAuthHttp(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -27,7 +28,8 @@ export function getAuthHttp(http: Http) {
     BrowserModule,
     FormsModule,
     HttpModule,
-    CollapseModule
+    CollapseModule,
+    AlertModule.forRoot()
   ],
   providers: [
     UserService,

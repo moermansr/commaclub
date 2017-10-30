@@ -28,6 +28,10 @@
       }
     }
   ],
+  "styles": [
+    "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+   "styles.css"
+    ],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
@@ -62,11 +66,7 @@
       "module": false,
       "pipe": true,
       "service": true
-    },
-    "styles": [
-      "../node_modules/bootstrap/dist/css/bootstrap.css",
-      "styles.css"
-      ]
+    }
   }
 }
 
